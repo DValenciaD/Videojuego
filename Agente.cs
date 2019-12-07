@@ -48,4 +48,27 @@ public class Agente : MonoBehaviour
             return (false);
         }
     }
+
+    protected bool MedirDistancia()
+    {
+        Vector3 metaPos = new Vector3(objetivo.position.x, this.transform.position.y, objetivo.position.z);
+        float distancia = Vector3.Distance(transform.position, metaPos);
+        Debug.Log(distancia);
+        return distancia;
+    }
+
+    protected bool MedirDistanciaBool()
+    {
+        Vector3 metaPos = new Vector3(objetivo.position.x, this.transform.position.y, objetivo.position.z);
+        float distancia = new Vector3.Distancia(tranform.position, metaPos);
+
+        if (distancia < distanciaMeta) //Hace comparación entre distancia y distancia meta
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
